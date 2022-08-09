@@ -52,6 +52,15 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NRD-2X-hX2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA1-Kh-qvd">
+                                <rect key="frame" x="107" y="496" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="QJA-Cs-r5Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,7 +69,9 @@
                             <constraint firstItem="e2k-lc-Lbp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="272" id="CuU-Dx-JVF"/>
                             <constraint firstItem="oE3-QN-Kjf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="EZZ-TE-pxD"/>
                             <constraint firstItem="Avd-j4-dY7" firstAttribute="centerX" secondItem="oE3-QN-Kjf" secondAttribute="centerX" id="SvU-Rq-lER"/>
+                            <constraint firstItem="zA1-Kh-qvd" firstAttribute="top" secondItem="e2k-lc-Lbp" secondAttribute="bottom" constant="36" id="q0r-4n-ufB"/>
                             <constraint firstItem="e2k-lc-Lbp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="r5O-rN-rHd"/>
+                            <constraint firstItem="zA1-Kh-qvd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rHE-zE-Zsd"/>
                             <constraint firstItem="oE3-QN-Kjf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tJj-gZ-sFs"/>
                             <constraint firstItem="e2k-lc-Lbp" firstAttribute="centerX" secondItem="Avd-j4-dY7" secondAttribute="centerX" id="usf-e4-4qg"/>
                             <constraint firstItem="Avd-j4-dY7" firstAttribute="top" secondItem="oE3-QN-Kjf" secondAttribute="bottom" constant="30" id="v6n-vk-a7H"/>
@@ -71,6 +82,7 @@
                         <outlet property="button1" destination="oE3-QN-Kjf" id="uCZ-vI-SQ6"/>
                         <outlet property="button2" destination="Avd-j4-dY7" id="Z4T-JV-Ebc"/>
                         <outlet property="button3" destination="e2k-lc-Lbp" id="DLp-Q3-Zxj"/>
+                        <outlet property="guessesLabel" destination="zA1-Kh-qvd" id="MRU-p1-fZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

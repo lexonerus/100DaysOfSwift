@@ -13,10 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var guessesLabel: UILabel!
     
     // MARK: Properties
     var countries = [String]()
     var score = 0
+    var guess = 0
     var correctAnswer = Int.random(in: 0...2)
     
     // MARK: ViewController lifecycle
@@ -24,10 +26,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureAppearance()
         askQuestion(action: nil)
-        title = countries[correctAnswer].uppercased()
+        title = "\(countries[correctAnswer].uppercased()) Score: \(score)"
+        
     }
 
     @IBAction func buttonTapped(_ sender: UIButton) {
+        guess += 1
         var title: String
         if sender.tag == correctAnswer {
             title = "Correct"
@@ -35,6 +39,16 @@ class ViewController: UIViewController {
         } else {
             title = "Wrong"
             score -= 1
+            let ac = UIAlertController(title: "No, thi is \(countries[sender.tag].uppercased())", message: "Your score is \(score).", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: askQuestion))
+            present(ac, animated: true)
+        }
+        
+        if guess == 10 {
+            let ac = UIAlertController(title: "10 guess is last.", message: "Your score is \(score).", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: askQuestion))
+            present(ac, animated: true)
+            return
         }
 
         let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
@@ -73,6 +87,8 @@ private extension ViewController {
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
-        title = countries[correctAnswer].uppercased()
+        title = "\(countries[correctAnswer].uppercased()) Score: \(score)"
+        
+        guessesLabel.text = "Number of guesses = \(guess)"
     }
 }
